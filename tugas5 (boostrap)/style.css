@@ -1,0 +1,135 @@
+.emoji {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .emoji:after {
+    position: absolute;
+    bottom: -40px;
+    font-size: 18px;
+    width: 60px;
+    left: calc(50% - 30px);
+    color: #8A8A8A;
+  }
+   
+  .emoji__lengan, .emoji__jempol {
+    position: absolute;
+  }
+
+  .emoji__lengan:before, .emoji__lengan:after, .emoji__jempol:before, .emoji__jempol:after {
+    position: absolute;
+    content: '';
+  }
+   
+  .emoji--like {
+    background: #548DFF;
+  }
+
+  .emoji--like:after {
+    content: '';
+  }
+
+  .emoji--like .emoji__lengan {
+    left: 25px;
+    bottom: 30px;
+    width: 20px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    z-index: 0;
+    -webkit-animation: lengan-up 2s linear infinite;
+            animation: lengan-up 2s linear infinite;
+  }
+
+  .emoji--like .emoji__lengan:before {
+    left: 25px;
+    bottom: 5px;
+    width: 40px;
+    background: inherit;
+    height: 10px;
+    border-radius: 2px 10px 10px 2px;
+    box-shadow: 1px -9px 0 1px #FFFFFF, 2px -19px 0 2px #FFFFFF, 3px -29px 0 3px #FFFFFF;
+  }
+
+  .emoji--like .emoji__jempol {
+    border-bottom: 20px solid #FFFFFF;
+    border-left: 20px solid transparent;
+    top: -25px;
+    right: -25px;
+    z-index: 2;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    -webkit-animation: jempol-up 2s linear infinite;
+            animation: jempol-up 2s linear infinite;
+  }
+
+  .emoji--like .emoji__jempol:before {
+    border-radius: 50% 50% 0 0;
+    background: #FFFFFF;
+    width: 10px;
+    height: 12px;
+    left: -10px;
+    top: -8px;
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+    box-shadow: -1px 4px 0 -1px #FFFFFF;
+  }
+   
+  @-webkit-keyframes lengan-up {
+    25% {
+      -webkit-transform: rotate(15deg);
+              transform: rotate(15deg);
+    }
+    50% {
+      -webkit-transform: rotate(-15deg) translateY(-10px);
+              transform: rotate(-15deg) translateY(-10px);
+    }
+    75%, 100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
+  @keyframes lengan-up {
+    25% {
+      -webkit-transform: rotate(15deg);
+              transform: rotate(15deg);
+    }
+    50% {
+      -webkit-transform: rotate(-15deg) translateY(-10px);
+              transform: rotate(-15deg) translateY(-10px);
+    }
+    75%, 100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
+  @-webkit-keyframes jempol-up {
+    25% {
+      -webkit-transform: rotate(20deg);
+              transform: rotate(20deg);
+    }
+    50%, 100% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+  }
+  
+  @keyframes jempol-up {
+    25% {
+      -webkit-transform: rotate(20deg);
+              transform: rotate(20deg);
+    }
+    50%, 100% {
+      -webkit-transform: rotate(5deg);
+              transform: rotate(5deg);
+    }
+  }
